@@ -1,0 +1,11 @@
+#include <os2.h>
+
+MENU 1
+BEGIN
+   SUBMENU "~Defaults", 1, MIS_TEXT
+   BEGIN
+      MENUITEM "~ALPHA", 100, MIS_TEXT
+      MENUITEM "~Beta",  101, MIS_TEXT
+   END
+END
+

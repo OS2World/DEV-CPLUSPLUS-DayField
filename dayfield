@@ -1,0 +1,31 @@
+CFLAGS = -c -ALw -G2sw 
+LOPT = $(LDBG) /align:16 /NOD
+IFLAGS = 
+
+.c.obj:
+   cl $(CFLAGS) $(IFLAGS) $(OPT) $(CDBG) $(PROTO) $*.c $(PROTOH)
+
+crmenu.obj: crmenu.c 
+
+daysubpr.obj: daysubpr.c day.h crmenu.h
+
+daycrate.obj: daycrate.c day.h daywinpr.h
+
+daywinpr.obj: daywinpr.c day.h daycrate.h
+
+dayregst.obj: dayregst.c day.h daywinpr.h
+
+acrtused.obj: acrtused.c
+
+dayfield.res : dayfield.rc 
+   rc -r dayfield.rc
+
+dayfield.dll: acrtused.obj daycrate.obj daywinpr.obj dayregst.obj \
+             daysubpr.obj crmenu.obj
+   link $(LOPT) @dayfield.rsp
+   rc dayfield.res dayfield.dll
+   implib dayfield.lib dayfield.def
+
+dayfield.dll: dayfield.res 
+   rc dayfield.res dayfield.dll
+

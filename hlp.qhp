@@ -1,0 +1,19 @@
+// this file should be edited to contain a list of the procedures
+// to be placed in the QH database.  The name after the .context
+// should be consistant with the .category name in the individual
+// modules and should match the name given in the wshelp.doc file 
+// for this context.  That is the link backwards from the module to 
+// this list.  The .category command in this file is the link 
+// backwards to wshelp.doc, and should contain an ordinal for the 
+// position in the wshelp.doc list of the "cursor" that you wish 
+// the display to be positioned in the wshelp list. ( huh? )  The
+// .topic command should match the name given in the .context command.
+
+.context Day-Field-Window
+.category AQL Tools 
+.list
+DayWinProc 
+DaySubWinProc 
+DayCreate 
+RegisterDayFieldClass
+

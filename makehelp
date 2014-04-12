@@ -1,0 +1,7 @@
+
+dayfield.hlp: hlp.qhp \
+              DAYSUBPR.C \
+              DAYREGST.C \
+              DAYWINPR.C \
+              DAYCRATE.C 
+   helpmake /T /E /Odayfield.hlp hlp.qhp *.c 

@@ -1,0 +1,20 @@
+CFLAGS = -c -ALw -G2sw 
+LOPT = $(LDBG) /align:16 /NOD
+IFLAGS =
+
+.c.obj:
+   cl $(CFLAGS) $(IFLAGS) $(OPT) $(CDBG) $(PROTO) $*.c $(PROTOH)
+
+test.obj: test.c
+
+test.res : test.rc 
+   rc -r test.rc
+
+test.exe: test.obj test.def 
+   link $(LOPT) test \
+   ,,,llibce os2 dayfield.lib,test.def
+   rc test.res test.exe
+
+test.exe: test.res 
+        rc test.res test.exe
+

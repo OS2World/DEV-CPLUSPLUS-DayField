@@ -1,0 +1,15 @@
+; PM Day o Week Field window class
+
+LIBRARY    DAYFIELD  INITINSTANCE
+
+DESCRIPTION   'Day o Week Field Class by TASP Group, INC Copywrite 1989'
+
+PROTMODE
+
+DATA NONSHARED
+
+HEAPSIZE   8192
+
+EXPORTS    RegisterDayFieldClass
+           DayWinProc
+           DaySubWinProc
